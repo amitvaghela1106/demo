@@ -1,0 +1,78 @@
+<script
+  src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+  crossorigin="anonymous"
+  defer
+></script>
+<link
+  href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+>
+<section class="swiffy-slider">
+  <div class="main-containe">
+    <div class="swiffy-slider-banner">
+      <ul class="slider-container">
+        {% for block in section.blocks %}
+          <li>
+            <img src="{{ block.settings.gallary_image | img_url : "500x" }}">
+            <h3 class="customer-name">{{ block.settings.name }}</h3>
+            <p class="customer-message">{{ block.settings.richtext }}</p>
+            <div class="review-stars">
+              {% for i in (1..block.settings.review_stars) %}
+                <span class="star"></span>
+              {% endfor %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+      <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+{% schema %}
+  {
+  "name": "Products slideshow",
+  "settings": [
+
+  ],"blocks":[
+      {
+        "type":"gallery",
+        "name":"Galelry",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"gallary_image",
+            "label":"gallary image"
+          },{
+            "type":"text",
+            "id":"name",
+            "label":"Name"
+          },
+          {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "Text"
+          },
+          {
+          "type": "number",
+          "label": "Review Stars",
+          "id": "review_stars"
+        }
+        ]
+      }
+  ],
+    "presets": [
+    {
+      "name": "Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

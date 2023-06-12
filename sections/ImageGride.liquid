@@ -1,0 +1,119 @@
+{% style %}
+      .image-wrapper {
+        display: flex;
+    }
+    .image {
+      padding-right: 80px;
+  }
+{% endstyle %}
+{% comment %}
+  Render the Image Grid section using the selected images.
+  Customize the layout and styles as needed.
+{% endcomment %}
+<section class="image-grid-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="image-wrapper">
+          {% for block in section.blocks %}
+            <div class="image">
+              <img
+                src="{{ block.settings.product | img_url: 'medium' }}"
+                onmouseover="bigImg(this)"
+                onmouseout="normalImg(this)"
+                alt="Image 1"
+              >
+              <div class="product-info">
+                <h3>{{ block.settings.product.title }}</h3>
+                <p>{{ block.settings.product.price | money }}</p>
+                <a href="{{ block.settings.product.url }}">View product</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-md-4">
+        <div class="image-wrapper">
+          {% for block in section.blocks %}
+            <div class="image">
+              <img
+                src="{{ block.settings.product | img_url: 'medium' }}"
+                onmouseover="bigImg(this)"
+                onmouseout="normalImg(this)"
+                alt="Image 1"
+              >
+              <div class="product-info">
+                <h3>{{ block.settings.product.title }}</h3>
+                <p>{{ block.settings.product.price | money }}</p>
+                <a href="{{ block.settings.product.url }}">View product</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function bigImg(x) {
+    x.style.height = "350px";
+    x.style.width = "350px";
+  }
+
+  function normalImg(x) {
+    x.style.height = "300px";
+    x.style.width = "300px";
+  }
+</script>
+
+{% comment %}
+  Create a new section called "Image Grid Section".
+  This section will allow customization options for the image grid display.
+{% endcomment %}
+{% schema %}
+{
+  "name": "Featured product",
+  "settings": [
+
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+  ],
+  "blocks":[
+      {
+        "type":"gallery",
+        "name":"imagegride1",
+        "settings":[
+            {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+        ]
+      }
+  ],
+  "blocks":[
+      {
+        "type":"gallery",
+        "name":"imagegride",
+        "settings":[
+            {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "ImageGride",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

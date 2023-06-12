@@ -1,0 +1,67 @@
+{{ 'theme.css' | asset_url | stylesheet_tag }}
+<script
+  src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+  crossorigin="anonymous"
+  defer
+></script>
+<link
+  href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
+>
+
+<center><h1>Welcomee My Page</h1></center>
+
+
+<section class="swiffy-slider">
+  <div class="main-containe">
+    <div class="swiffy-slider-banner" style="width: 70%; height:40%">
+      <ul class="slider-container">
+        {% for block in section.blocks %}
+          <li>
+            <img src="{{ block.settings.gallary_image | img_url : "800x" }}">
+          </li>
+        {% endfor %}
+      </ul>
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+      <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+    <div class="swiffy-slider-image" style="width: 30%; height:30%">
+      <ul class="slider-container">
+        {% for block in section.blocks %}
+          <li>
+            <img src="{{ block.settings.gallary_image | img_url : "400x" }}">
+            <img src="{{ block.settings.gallary_image | img_url : "400x" }}">
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "slideshow",
+  "settings": [
+
+  ],"blocks":[
+      {
+        "type":"gallery",
+        "name":"Galelry",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"gallary_image",
+            "label":"gallary image"
+          }
+        ]
+      }
+
+  ]
+}
+{% endschema %}

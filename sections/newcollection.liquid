@@ -1,0 +1,52 @@
+<nav class="mega-menu">
+  <ul class="mega-menu-list">
+    {% for collection in collections %}
+      <li class="mega-menu-item">
+        <ul class="sub-menu">
+          {% for product in collection.products %}
+            <li>
+              <a href="{{ product.url }}">{{ product.title }}</a>
+              <br>
+              <img src="{{ product.featured_image.src | img_url:"poco" }}" alt="{{ product.title }}">
+              <p>Price:- {{ product.price | money }}</p>
+            </li>
+            <form action="/cart/add" method="post" class="add-to-cart-form">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>  
+<script>
+    (function() {
+    function updateCartCounter() {
+      $.ajax({
+        type: 'GET',
+        url: '/cart.js',
+        dataType: 'json',
+        success: function(cart) {
+          $('.cart-icon-counter').text(cart.item_count);
+        }
+      });
+    }
+
+    $(document).ready(function() {
+      updateCartCounter();
+    });
+  })();
+</script>
+{% schema %}
+{
+  "name": "Section name",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

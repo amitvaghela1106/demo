@@ -1,0 +1,31 @@
+  ul.navbar-nav.ms-auto, .container-fluid {
+      display: flex;
+  }
+a.nav-link {
+    padding: 35px;
+}
+.main-containe{
+    display: flex;
+}
+ul.product-list {
+    display: flex;
+}
+.product
+ {
+    margin: 70px;
+}
+
+.image-grid-section
+{
+  background-color:darkgray;
+}
+.row 
+{
+    display: flex;
+}
+.col-md-4{
+   margin: 90px;
+}
+
+
+

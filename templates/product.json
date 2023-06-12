@@ -1,0 +1,17 @@
+{
+  "sections": 
+  {
+    "main": 
+    {
+      "type": "main-product",
+      "settings": {
+        "usermanual": "the-multi-managed-snowboard"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+
+ 

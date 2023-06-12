@@ -1,0 +1,168 @@
+{
+  "current": {
+    "bg": "#ffffff",
+    "text_color": "#000000",
+    "show_search": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/images.png"
+        }
+      },
+      "e4bd7727-f903-4f3f-a665-d26c4a8fdd11": {
+        
+        "type": "related-products",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "a461cba5-9719-46ee-bf49-50f103f6e329":  {
+        "type": "featured-product",
+        "disabled": true,
+        "settings": {
+          "heading": "",
+          "product": ""
+        }
+      },
+      "c4ad2128-df88-4080-82c6-ad6698700e1b": {
+        "type": "featured-collection",
+        "blocks": {
+          "cc310eda-92fb-4d07-a82f-14fb85868174": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg"
+            }
+          },
+          "70fb402c-f0dc-4ecb-beb6-a4087aa2fbf9": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg"
+            }
+          },
+          "02cfc5ed-7f78-4132-a505-1073b29c4f6b": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/small-business-interior.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "cc310eda-92fb-4d07-a82f-14fb85868174",
+          "70fb402c-f0dc-4ecb-beb6-a4087aa2fbf9",
+          "02cfc5ed-7f78-4132-a505-1073b29c4f6b"
+        ],
+        "settings": {
+        }
+      },
+      "47a01cd4-49d9-4bb5-9635-c838f7059f9a": {
+        "type": "collection",
+        "settings": {
+          "collection": "automated-collection",
+          "num_products": 4
+        }
+      },
+      "0a0289bb-6f16-48bd-9127-5cd1c3c53b0a": {
+        "type": "testimonial",
+        "blocks": {
+          "067e7384-c804-4c52-b482-3fb728af29ee": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/p-3.jpg",
+              "name": "Green T-shirt",
+              "richtext": "<p>available for gree t-shirt<\/p>",
+              "review_stars": 5
+            }
+          },
+          "dbd19187-4b70-4ec8-86d6-e7ff8eff2251": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/p-7.jpg",
+              "name": "Black T-shirt",
+              "richtext": "<p>available for black t-shirt<\/p>",
+              "review_stars": 5
+            }
+          },
+          "bcbd7632-5f9c-4f52-8eb5-034c524325b7": {
+            "type": "gallery",
+            "settings": {
+              "gallary_image": "shopify:\/\/shop_images\/p-9.jpg",
+              "name": "Blue T-shirt",
+              "richtext": "<p>Available for blue t-shirt<\/p>",
+              "review_stars": 5
+            }
+          }
+        },
+        "block_order": [
+          "067e7384-c804-4c52-b482-3fb728af29ee",
+          "dbd19187-4b70-4ec8-86d6-e7ff8eff2251",
+          "bcbd7632-5f9c-4f52-8eb5-034c524325b7"
+        ],
+        "settings": {
+        }
+      },
+      "49903d33-1986-43c5-afc3-1172b5945855": {
+        "type": "image-with-text",
+        "settings": {
+          "text_content": "<p>Left image are show <\/p><p>⦁\tCreate the imges with a text section on the home page with the option of changing the image position from right to left or left to right. For example, if I am using this image with a section adding the image to the left and the text will be set to the right then again I am using that same section below that and I want the image on the right side and the text will be in the left side then using that image position option I can make this. (Note: do not create 2 different files for this task).  <\/p>",
+          "image_position": "Left",
+          "image_left": "shopify:\/\/shop_images\/Jenny_Fischer_14239430-d538-455f-bfd4-f337d1c985d2.webp"
+        }
+      },
+      "13516f00-64ef-4478-b9e8-2f549b1e3053": {
+        "type": "ImageGride",
+        "blocks": {
+          "3e69f104-310c-411d-9a8a-a221e6055836": {
+            "type": "gallery",
+            "settings": {
+              "product": "abc"
+            }
+          },
+          "c00892d1-387b-45d1-a2bd-b700e32dca90": {
+            "type": "gallery",
+            "settings": {
+              "product": "the-multi-managed-snowboard"
+            }
+          },
+          "9ad69b8b-0994-403e-a14d-1a0de0291949": {
+            "type": "gallery",
+            "settings": {
+              "product": "the-draft-snowboard"
+            }
+          },
+          "82d798ee-bd45-480a-a857-1abf0c22be2e": {
+            "type": "gallery",
+            "settings": {
+              "product": "the-collection-snowboard-liquid"
+            }
+          }
+        },
+        "block_order": [
+          "3e69f104-310c-411d-9a8a-a221e6055836",
+          "c00892d1-387b-45d1-a2bd-b700e32dca90",
+          "9ad69b8b-0994-403e-a14d-1a0de0291949",
+          "82d798ee-bd45-480a-a857-1abf0c22be2e"
+        ],
+        "settings": {
+          "product": ""
+        }
+      },
+      "product-tabs": {
+        "type": "product-tabs",
+        "settings": {
+          "usermanual": "https:\/\/testingsidd.myshopify.com\/products\/the-draft-snowboard"
+        }
+      }
+    },
+    "content_for_index": [
+      "e4bd7727-f903-4f3f-a665-d26c4a8fdd11",
+      "a461cba5-9719-46ee-bf49-50f103f6e329",
+      "c4ad2128-df88-4080-82c6-ad6698700e1b",
+      "47a01cd4-49d9-4bb5-9635-c838f7059f9a",
+      "13516f00-64ef-4478-b9e8-2f549b1e3053",
+      "0a0289bb-6f16-48bd-9127-5cd1c3c53b0a",
+      "49903d33-1986-43c5-afc3-1172b5945855",
+      "product-tabs"
+    ]
+  }
+}

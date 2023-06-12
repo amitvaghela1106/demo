@@ -1,0 +1,75 @@
+<section class="image-with-text-section">
+
+  <div class="container">
+
+    {% if section.settings.image_position == 'Left' %}
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{ section.settings.image_left | img_url: '800x' }}" alt="Left Image">
+        </div>
+        <div class="col-md-6">
+          <div class="text-content">
+            {{ section.settings.text_content }}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-content">
+            {{ section.settings.text_content }}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="{{ section.settings.image_right | img_url: '800x' }}" alt="Right Image">
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+
+{% schema %}
+  {
+  "name": "Image with Text Section",
+  "settings": [
+    {
+            "type":"richtext",
+            "id":"text_content",
+            "label":"Name"
+          },
+    {
+      "type": "radio",
+      "label": "Image Position",
+      "id": "image_position",
+      "default": "Left",
+      "options": [
+        { "value": "Left", "label": "Left" },
+        { "value": "Right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "label": "Left Image",
+      "id": "image_left"
+    },
+    {
+      "type": "image_picker",
+      "label": "Right Image",
+      "id": "image_right"
+    }
+  ],
+     "presets": [
+    {
+      "name": "image-text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
