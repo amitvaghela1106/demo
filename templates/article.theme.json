@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "collection": {
+      "type": "collection",
+      "settings": {
+      }
+    }, 
+    "ImageGride": 
+     {
+      "type": "ImageGride",
+      "settings": {
+      }
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "settings": {
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "collection",
+    "ImageGride",
+    "testimonial",
+    "image-with-text"
+  ]
+}

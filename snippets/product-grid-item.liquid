@@ -1,0 +1,53 @@
+<a class="product-grid-item" href="{{ product.url }}">
+  <img src="{{ product.featured_image | image_url: width: 400 }}">
+  <span class="product-grid-item-text">
+    <h3>{{ product.title }}</h3>
+    <div class="main-product-prices">
+      <p class="main-product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}hide{% endunless %}">
+        {{ product.selected_or_first_available_variant.compare_at_price | money }}
+      </p>
+      <p class="main-product-price">
+        {{ product.selected_or_first_available_variant.price | money }}
+      </p>
+    </div> 
+    {% if product.variants.size > 1 %}
+      <div class="main-product-options">
+        {% for option in product.options_with_values %}
+          <fieldset class="main-product-option">
+            <legend>{{ option.name }}</legend>
+            <div class="main-product-option-radios">
+              {% for value in option.values %}
+                <div class="main-product-option-radio">
+                  <input
+                    {% if option.selected_value == value %}
+                      checked
+                    {% endif %}
+                    type="radio"
+                    name="{{ option.name }}"
+                    value="{{ value }}"
+                    class="hide"
+                    id="{{ option.name | handlize }}-{{ value | handlize }}"
+                  >
+                  <label for="{{ option.name | handlize }}-{{ value | handlize }}">
+                    {{ value }}
+                  </label>
+                </div>
+              {% endfor %}
+            </div>
+          </fieldset>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if product.compare_at_price %}
+      {% assign save_price = product.compare_at_price_max | minus: product.price %}
+      <span class="save-badge">$ {{ save_price | money }}</span>
+    {% endif %}
+
+    {% if product.available %}
+      <span class="in-stock">In Stock</span>
+    {% else %}
+      <span class="out-of-stock">Out of Stock</span>
+    {% endif %}
+  </span>
+</a>

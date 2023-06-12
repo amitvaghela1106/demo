@@ -1,0 +1,67 @@
+{% comment %}
+  Render the collection section using the selected collection and number of products to display.
+  Customize the layout and styles as needed.
+{% endcomment %}
+
+<section class="collection-section">
+  <div class="container">
+    {% if collection.metafields.custom.image %}
+      <img src="{{collection.metafields.custom.image | img_url: '800x' }}" alt="Banner Image">
+    {% endif %}
+    <center>
+      <h1 class="title">{{ section.settings.collection.title }}</h1>
+    </center>
+    <ul class="product-list">
+      {% for product in collections[section.settings.collection.handle].products limit: section.settings.num_products %}
+        <a href="{{ product.url }}" class="product">
+          <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+          <form action="/cart/add" method="post" class="add-to-cart-form">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+          </form>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+
+{% comment %} 
+  Create a new section called "Collection Section".
+  This section will allow customization options for the collection display.
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Collection Section",
+  "settings": [
+    {
+      "type": "collection",
+      "label": "Collection",
+      "id": "collection"
+    },
+    {
+      "type": "range",
+      "label": "Number of Products to Display",
+      "id": "num_products",
+      "min": 1,
+      "max": 10,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
